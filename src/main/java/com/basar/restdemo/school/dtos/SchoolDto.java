@@ -1,4 +1,4 @@
-package com.basar.restdemo.Dtos;
+package com.basar.restdemo.school.dtos;
 
 public record SchoolDto(
         String name

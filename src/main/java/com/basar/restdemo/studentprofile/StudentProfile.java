@@ -1,5 +1,6 @@
-package com.basar.restdemo.Models;
+package com.basar.restdemo.studentprofile;
 
+import com.basar.restdemo.student.models.Student;
 import jakarta.persistence.*;
 
 @Entity

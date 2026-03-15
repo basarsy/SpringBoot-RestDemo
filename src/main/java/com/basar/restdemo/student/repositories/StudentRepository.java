@@ -1,6 +1,6 @@
-package com.basar.restdemo.Repositories;
+package com.basar.restdemo.student.repositories;
 
-import com.basar.restdemo.Models.Student;
+import com.basar.restdemo.student.models.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

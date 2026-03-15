@@ -1,5 +1,7 @@
-package com.basar.restdemo.Models;
+package com.basar.restdemo.student.models;
 
+import com.basar.restdemo.school.models.School;
+import com.basar.restdemo.studentprofile.StudentProfile;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 

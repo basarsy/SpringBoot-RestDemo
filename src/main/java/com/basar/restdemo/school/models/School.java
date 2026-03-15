@@ -1,5 +1,6 @@
-package com.basar.restdemo.Models;
+package com.basar.restdemo.school.models;
 
+import com.basar.restdemo.student.models.Student;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
