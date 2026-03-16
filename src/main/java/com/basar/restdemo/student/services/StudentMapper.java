@@ -4,12 +4,16 @@ import com.basar.restdemo.student.dtos.StudentDto;
 import com.basar.restdemo.student.dtos.StudentResponseDto;
 import com.basar.restdemo.school.models.School;
 import com.basar.restdemo.student.models.Student;
+import jakarta.validation.constraints.Null;
 import org.springframework.stereotype.Service;
 
 @Service
 public class StudentMapper {
 
     public Student toStudent(StudentDto dto){
+        if (dto == null){
+            throw new NullPointerException("The student dto should not be null.");
+        }
         var student = new Student();
         student.setFirstName(dto.firstName());
         student.setLastName(dto.lastName());
