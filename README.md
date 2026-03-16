@@ -1,5 +1,5 @@
 
-# REST Demo API
+# EduRoster API
 
 A simple RESTful API for managing Schools and Students, built with Spring Boot and PostgreSQL.
 
