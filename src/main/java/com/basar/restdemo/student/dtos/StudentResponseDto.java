@@ -5,4 +5,7 @@ public record StudentResponseDto(
         String lastName,
         String email) {
 
+    public Object getFirstName() {
+        return firstName;
+    }
 }

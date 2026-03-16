@@ -20,9 +20,7 @@ public class StudentService {
         this.studentMapper = studentMapper;
     }
 
-    public StudentResponseDto saveStudent(
-            @RequestBody StudentDto dto
-            ){
+    public StudentResponseDto saveStudent(StudentDto dto) {
         var student = studentMapper.toStudent(dto);
         var savedStudent = repository.save(student);
         return studentMapper.toStudentResponseDto(savedStudent);

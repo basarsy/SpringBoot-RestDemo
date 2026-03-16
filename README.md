@@ -1,10 +1,11 @@
+
 # REST Demo API
 
 A simple RESTful API for managing Schools and Students, built with Spring Boot and PostgreSQL.
 
 ## Technologies Used
 * Java
-* Spring Boot (Web, Data JPA)
+* Spring Boot (Web, Data JPA, Validation)
 * PostgreSQL
 * Maven
 
@@ -17,13 +18,32 @@ A simple RESTful API for managing Schools and Students, built with Spring Boot a
 
 ### Schools
 * `POST /schools` : Creates a new school.
-    * Body: `{"name": "School Name"}`
+  * Body: `{"name": "School Name"}`
 * `GET /schools` : Retrieves a list of all schools.
 
 ### Students
 * `POST /students` : Creates a new student.
-    * Body: `{"firstName": "John", "lastName": "Doe", "email": "john@example.com", "schoolId": 1}`
+  * Body: `{"firstName": "John", "lastName": "Doe", "email": "john@example.com", "schoolId": 1}`
+  * **Validation:** `firstName` and `lastName` are required. Returns `400 Bad Request` with field-level error messages on failure.
 * `GET /students` : Retrieves a list of all students.
 * `GET /students/{student-id}` : Retrieves a specific student by their ID.
 * `GET /students/search/{student-name}` : Searches for students by their first name.
 * `DELETE /students/{student-id}` : Deletes a specific student by their ID.
+
+## Validation & Error Handling
+Request body validation is enforced using Jakarta Bean Validation (`@NotEmpty`). Invalid requests return a `400 Bad Request` response with a JSON map of field names to error messages. Example:
+```json
+{
+  "firstName": "Firstname should not be empty.",
+  "lastName": "Lastname should not be empty."
+}
+```
+## Testing
+Unit tests are provided for:
+* **`StudentMapperTest`** — Tests mapping between DTOs and entities, including null-safety.
+* **`StudentServiceTest`** — Tests service-layer logic (save, find all, find by ID, search by name, delete) with mocked repository and mapper dependencies using Mockito.
+
+Run tests with:
+```bash
+./mvnw test
+```
