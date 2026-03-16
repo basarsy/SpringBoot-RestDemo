@@ -97,13 +97,6 @@ class StudentServiceTest {
                 "john@mail.com",
                 22
         ));
-        students.add(new Student(
-                "Alice",
-                "Doe",
-                "alice@mail.com",
-                20
-        ));
-
 
         // Mock the calls
         when(studentRepository.findAll()).thenReturn(students);
